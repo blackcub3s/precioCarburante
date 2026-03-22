@@ -7,11 +7,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
     //obting el valor del formulari de carburant quan canvia 
     radioDiesel.addEventListener("change", () => {
-        emplenaSortidaPreu_iva10percent(radioDiesel.value, inputPreu21.value);  //radioDiesel.value es "D"
+        emplenaSortidaPreu_iva10percent(radioDiesel.value, parseFloat(inputPreu21.value));  //radioDiesel.value es "D"
     });
     
     radioGasolina.addEventListener("change", () => {
-        emplenaSortidaPreu_iva10percent(radioGasolina.value, inputPreu21.value); //radioGasolina.value es "D"
+        emplenaSortidaPreu_iva10percent(radioGasolina.value, parseFloat(inputPreu21.value)); //radioGasolina.value es "D"
     });
 
 
