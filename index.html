@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src = "./js/calculs.js"></script>
+    <link rel="stylesheet" href="./css/estils.css">
+</head>
+<body>
+    <section id = "contenidorPare">
+        <section>
+            <p><b>Introdueix el preu <br>d'ahir 21 de març (iva 21%):</b></p>
+            <input id = "entrada21perCent" type="number">
+
+            <fieldset>
+                <legend>Sel·lecciona carburant:</legend>
+
+                <div>
+                    <input type="radio" id="radioDiesel" name="carburant" value="D">
+                    <label for="radioDiesel">Dièsel</label>
+                </div>
+
+                <div>
+                    <input type="radio" id="radioGasolina" name="carburant" value="G">
+                    <label for="radioGasolina">Gasolina</label>
+                </div>
+            </fieldset>
+                
+        </section>
+
+        <div id = "rallaHoritzontal"></div>
+
+
+        <section>
+            <p><b>Preu esperat en surtidor el 22 de març (iva 10%):</b></p>
+            <p id = "sortidaDades10perCent"></p>
+        </section>
+    </section>
+</body>
+</html>
