@@ -3,9 +3,9 @@ document.addEventListener("DOMContentLoaded", () => {
     const radioDiesel = radiosCarburant[0];
     const radioGasolina = radiosCarburant[1];
 
-    const inputPreu21 = document.getElementById("entrada21perCent");    //agafaem l'imput que contindrà el preu del carburant el 21 de març (dia amb 21% iva)
+    const inputPreu21 = document.getElementById("entrada21perCent");    //agafem l'imput que contindrà el preu del carburant el 21 de març (dia amb 21% iva)
 
-    //obting el valor del formulari de carburant quan canvia 
+    //obtinc el valor del formulari de carburant quan canvia el radio button i el mostro en la sortida de dades
     radioDiesel.addEventListener("change", () => {
         emplenaSortidaPreu_iva10percent(radioDiesel.value, parseFloat(inputPreu21.value));  //radioDiesel.value es "D"
     });
@@ -14,6 +14,14 @@ document.addEventListener("DOMContentLoaded", () => {
         emplenaSortidaPreu_iva10percent(radioGasolina.value, parseFloat(inputPreu21.value)); //radioGasolina.value es "D"
     });
 
+    //NOMES PERMETIO CÀLCUL quan s'afegeix preu d'ahir 
+    // 21 de març al input de type number si hi ha algun radiobutton sel·leccionat
+    inputPreu21.addEventListener("input", () => {
+        if (radioDiesel.checked)
+            emplenaSortidaPreu_iva10percent(radioDiesel.value, parseFloat(inputPreu21.value)); 
+        if (radioGasolina.checked)
+            emplenaSortidaPreu_iva10percent(radioGasolina.value, parseFloat(inputPreu21.value));
+    });
 
     
 
