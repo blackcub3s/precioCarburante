@@ -1,26 +1,225 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500&family=DM+Mono:wght@400;500&display=swap');
 
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --bg:           #F5F3EE;
+    --surface:      #FFFFFF;
+    --surface-alt:  #F0EDE6;
+    --border:       #E0DDD6;
+    --accent:       #1D4ED8;
+    --accent-light: #EEF2FF;
+    --text-primary: #1A1A1A;
+    --text-muted:   #6B6B6B;
+    --text-hint:    #9CA3AF;
+    --success-bg:   #ECFDF5;
+    --success:      #065F46;
+    --success-border: #6EE7B7;
+    --radius:       12px;
+    --radius-sm:    8px;
+    --shadow:       0 1px 3px rgba(0,0,0,0.06), 0 4px 16px rgba(0,0,0,0.06);
+    --font:         'DM Sans', sans-serif;
+    --font-mono:    'DM Mono', monospace;
+}
+
+body {
+    background-color: var(--bg);
+    font-family: var(--font);
+    color: var(--text-primary);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem 1rem;
+}
 
 #contenidorPare {
-    display: grid;
-    place-items: center; /* centra horizontal y vertical */
+    background: var(--surface);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    border: 1px solid var(--border);
+    width: 100%;
+    max-width: 420px;
+    overflow: hidden;
 }
 
+#contenidorPare > section:first-child {
+    padding: 2rem 2rem 1.5rem;
+}
+
+/* Etiqueta del input principal */
+#contenidorPare > section:first-child > p {
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--text-muted);
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    margin-bottom: 0.6rem;
+}
+
+/* Input numèric */
+#entrada21perCent {
+    width: 100%;
+    font-family: var(--font-mono);
+    font-size: 2rem;
+    font-weight: 400;
+    color: var(--text-primary);
+    background: var(--surface-alt);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    padding: 0.6rem 1rem 0.6rem 2.2rem;
+    outline: none;
+    transition: border-color 0.2s, box-shadow 0.2s;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' fill='none' viewBox='0 0 24 24'%3E%3Cpath stroke='%239CA3AF' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' d='M17 7.5A6 6 0 1 0 17 16.5M4 10h10M4 14h10'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: 0.75rem center;
+    -moz-appearance: textfield;
+    appearance: textfield;
+}
+
+#entrada21perCent::-webkit-inner-spin-button,
+#entrada21perCent::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+}
+
+#entrada21perCent:focus {
+    border-color: var(--accent);
+    box-shadow: 0 0 0 3px rgba(29, 78, 216, 0.12);
+    background-color: var(--surface);
+}
+
+#entrada21perCent::placeholder {
+    color: var(--text-hint);
+    font-size: 1.5rem;
+}
+
+/* Fieldset de radio buttons */
+fieldset {
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    padding: 1rem;
+    margin-top: 1.25rem;
+    background: var(--surface-alt);
+}
+
+legend {
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    padding: 0 0.4rem;
+}
+
+fieldset > div {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    padding: 0.5rem 0;
+}
+
+fieldset > div:not(:last-child) {
+    border-bottom: 1px solid var(--border);
+}
+
+/* Radio button personalitzat */
+input[type="radio"] {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 18px;
+    height: 18px;
+    border: 2px solid var(--border);
+    border-radius: 50%;
+    cursor: pointer;
+    transition: border-color 0.15s, background 0.15s;
+    flex-shrink: 0;
+    position: relative;
+}
+
+input[type="radio"]::after {
+    content: '';
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    background: var(--accent);
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    transition: transform 0.15s;
+}
+
+input[type="radio"]:checked {
+    border-color: var(--accent);
+    background: var(--accent-light);
+}
+
+input[type="radio"]:checked::after {
+    transform: translate(-50%, -50%) scale(1);
+}
+
+fieldset label {
+    font-size: 15px;
+    font-weight: 400;
+    color: var(--text-primary);
+    cursor: pointer;
+}
+
+/* Separador */
 #rallaHoritzontal {
-    margin-top: 1em;
-    border-bottom: 2px dashed red;
-    width: 50%;
+    height: 1px;
+    background: var(--border);
 }
 
-section fieldset {
-    margin-top: 1em;
-    margin-bottom: 1em;
+/* Secció de sortida */
+#contenidorPare > section:last-child {
+    padding: 1.5rem 2rem 2rem;
+    background: var(--success-bg);
 }
 
-.missatges {
-    font: bold;
+#contenidorPare > section:last-child > p:first-child {
+    font-size: 13px;
+    font-weight: 500;
+    color: #047857;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
 }
 
 #sortidaDades10perCent {
-    border: 1px solid blue;
-    border-radius: 1em;
+    font-family: var(--font-mono);
+    font-size: 2.4rem;
+    font-weight: 500;
+    color: var(--success);
+    letter-spacing: -0.01em;
+    min-height: 3rem;
+}
+
+#sortidaDades10perCent:not(:empty)::after {
+    content: ' €/L';
+    font-size: 1rem;
+    font-weight: 400;
+    color: #047857;
+    vertical-align: middle;
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+    #contenidorPare > section:first-child,
+    #contenidorPare > section:last-child {
+        padding-left: 1.25rem;
+        padding-right: 1.25rem;
+    }
+
+    #entrada21perCent {
+        font-size: 1.6rem;
+    }
+
+    #sortidaDades10perCent {
+        font-size: 2rem;
+    }
 }
