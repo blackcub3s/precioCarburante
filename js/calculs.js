@@ -25,11 +25,11 @@ document.addEventListener("DOMContentLoaded", () => {
 function emplenaSortidaPreu_iva10percent(carburant, preuDiaPrevi_21PerCent) {
     const dom10perCent = document.getElementById("sortidaDades10perCent");
     if (carburant === "D") {
-        let IEH_previ_diesel = 0.379; // -- IEH ESTIMAT vigent abans de l'entrada del real decret 21 març 2026
+        let IEH_previ_diesel = 0.379; //segons Ley 38/1992, de 28 de diciembre, de Impuestos Especiales --> https://www.boe.es/eli/es/l/1992/12/28/38/con (vigent abans de l'entrada del real decret 21 març 2026)
         let IEH_nou_diesel = 0.26731; //segons real decret 21 març 2026 --> https://www.boe.es/boe/dias/2026/03/21/pdfs/BOE-A-2026-6544.pdf --> pág. 4338 --> epígrafe 1.3
         dom10perCent.textContent = rebaixaPreuCombustible_21_a_10(IEH_previ_diesel, preuDiaPrevi_21PerCent, IEH_nou_diesel);
     } else if (carburant === "G") {
-        let IEH_previ_gasolina = 0.472; //-- IEH ESTIMAT vigent abans de l'entrada del real decret 21 març 2026
+        let IEH_previ_gasolina = 0.472;   //segons Ley 38/1992, de 28 de diciembre, de Impuestos Especiales --> https://www.boe.es/eli/es/l/1992/12/28/38/con (vigent abans de l'entrada del real decret 21 març 2026)
         let IEH_nou_gasolina95 = 0.30432; //segons real decret 21 març 2026 --> https://www.boe.es/boe/dias/2026/03/21/pdfs/BOE-A-2026-6544.pdf --> pág. 4338 --> epígrafe 1.2.2
         dom10perCent.textContent = rebaixaPreuCombustible_21_a_10(IEH_previ_gasolina, preuDiaPrevi_21PerCent, IEH_nou_gasolina95);
     }
