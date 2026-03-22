@@ -36,12 +36,12 @@ function emplenaSortidaPreu_iva10percent(carburant, preuDiaPrevi_21PerCent) {
 }
 /*
 RAONAMENTS PREVIS: 
-Obtinc el preu base de la gasolina el dia 21 de març amb IEH previ (més car) i amb iva a 21%:
+Obtinc el preu base de la gasolina el dia 21 de març amb IEH previ (més car) i amb IVA a 21%:
        EXPR 1    (x + 0,378)*1.21 = 1.65  ---*-->   (preuBase + IEH_previ)*1.21 = preuSurtidorPrevi          
-Obtinc el preu base de la gasolina que hi hauria d'haver el 22 de març amb el nou IEH i l'iva al 10%:
+Obtinc el preu base de la gasolina que hi hauria d'haver el 22 de març amb el nou IEH i l'IVA al 10%:
        EXPR 2:   (x + 0,26731)*1.10 = Y   ---*-->   (preuBase + IEH_nou)*1.10 = preuSurtidorActual.    
         --------------------------------------------------------------------
-        --  *NOTA: x es preu base || Y es preu al surtidor amb 10% de iva --
+        --  *NOTA: x es preu base || Y es preu al surtidor                --
         --------------------------------------------------------------------
 
 PRE: 
