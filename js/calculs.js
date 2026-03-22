@@ -61,5 +61,5 @@ POST:
 function rebaixaPreuCombustible_21_a_10(IEH_previ, preuSurtidorPrevi, IEH_nou) {
     let preuBase = (preuSurtidorPrevi - 1.21*IEH_previ)/1.21;      //EXPR 1 aillada per trobar preuBase (la X d'EXPR 1)
     let preuSurtidorActual = (preuBase + IEH_nou)*1.10;
-    return preuSurtidorActual; 
+    return preuSurtidorActual.toFixed(3); //redondejo a 3 decimals
 }
