@@ -223,3 +223,8 @@ fieldset label {
         font-size: 2rem;
     }
 }
+
+
+.textPetito {
+    font-size: .8em;
+}
